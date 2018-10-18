@@ -1,0 +1,26 @@
+{
+  "name": "decard-t6",
+  "version": "1.0.0",
+  "description": "Driver for decard-t6",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "relzhong",
+  "license": "ISC",
+  "dependencies": {
+    "callsite": "^1.0.0",
+    "ffi": "^2.2.0",
+    "iconv-lite": "^0.4.23",
+    "ref-array": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-egg": "^7.0.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-html": "^4.0.3",
+    "mocha": "^5.2.0",
+    "power-assert": "^1.5.0"
+  }
+}
