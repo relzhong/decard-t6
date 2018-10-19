@@ -352,7 +352,8 @@ hardware.IC_SetUsbTimeout = ntimes => {
 
 hardware.IC_CpuReset = handle => {
   try {
-    const data = new Buffer(64 * ref.types.uchar.size);
+    const data = new Buffer(100 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuReset(handle, len, data);
     if (res === 0) {
@@ -368,7 +369,8 @@ hardware.IC_CpuReset = handle => {
 
 hardware.IC_CpuReset_Hex = handle => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(100 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuReset_Hex(handle, len, data);
     if (res === 0) {
@@ -384,7 +386,8 @@ hardware.IC_CpuReset_Hex = handle => {
 
 hardware.IC_CpuApdu = (handle, sbuff) => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(1000 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuApdu(handle, sbuff.length, sbuff, len, data);
     if (res === 0) {
@@ -400,7 +403,8 @@ hardware.IC_CpuApdu = (handle, sbuff) => {
 
 hardware.IC_CpuApdu_Hex = (handle, sbuff) => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(1000 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuApdu_Hex(handle, sbuff.length / 2, sbuff, len, data);
     if (res === 0) {
@@ -422,7 +426,8 @@ hardware.IC_CpuApdu_Hex = (handle, sbuff) => {
 
 hardware.IC_CpuApduSource = (handle, sbuff) => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(1000 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuApduSource(handle, sbuff.length, sbuff, len, data);
     if (res === 0) {
@@ -438,7 +443,8 @@ hardware.IC_CpuApduSource = (handle, sbuff) => {
 
 hardware.IC_CpuApduSource_Hex = (handle, sbuff) => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(1000 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuApduSource_Hex(handle, sbuff.length, sbuff, len, data);
     if (res === 0) {
@@ -512,7 +518,8 @@ hardware.IC_CpuApduEXT = (handle, sbuff) => {
 
 hardware.IC_CpuApduEXT_Hex = (handle, sbuff) => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(1000 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuApduEXT_Hex(handle, sbuff.length / 2, sbuff, len, data);
     if (res === 0) {
@@ -528,7 +535,8 @@ hardware.IC_CpuApduEXT_Hex = (handle, sbuff) => {
 
 hardware.IC_CpuApduSourceEXT = (handle, sbuff) => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(1000 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuApduSourceEXT(handle, sbuff.length, sbuff, len, data);
     if (res === 0) {
@@ -544,7 +552,8 @@ hardware.IC_CpuApduSourceEXT = (handle, sbuff) => {
 
 hardware.IC_CpuApduSourceEXT_Hex = (handle, sbuff) => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(1000 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuApduSourceEXT_Hex(handle, sbuff.length, sbuff, len, data);
     if (res === 0) {
@@ -560,7 +569,8 @@ hardware.IC_CpuApduSourceEXT_Hex = (handle, sbuff) => {
 
 hardware.IC_CpuColdReset = handle => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(100 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuColdReset(handle, len, data);
     if (res === 0) {
@@ -576,7 +586,8 @@ hardware.IC_CpuColdReset = handle => {
 
 hardware.IC_CpuColdReset_Hex = handle => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(100 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuColdReset_Hex(handle, len, data);
     if (res === 0) {
@@ -592,7 +603,8 @@ hardware.IC_CpuColdReset_Hex = handle => {
 
 hardware.IC_CpuHotReset = handle => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(100 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuHotReset(handle, len, data);
     if (res === 0) {
@@ -608,7 +620,8 @@ hardware.IC_CpuHotReset = handle => {
 
 hardware.IC_CpuHotReset_Hex = handle => {
   try {
-    const data = ref.alloc(ref.types.char);
+    const data = new Buffer(100 * ref.types.uchar.size);
+    data.type = ref.types.uchar;
     const len = ref.alloc(ref.types.char);
     const res = libdecard.IC_CpuHotReset_Hex(handle, len, data);
     if (res === 0) {

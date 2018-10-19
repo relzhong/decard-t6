@@ -33,6 +33,11 @@ describe('test com port connect', () => {
     const res = libdecard.IC_CpuApdu_Hex(device, '00B2010C00');
     assert(res.error === 0);
   });
+  it('should do apdu successfully', () => {
+    const res = libdecard.IC_CpuApdu_Hex(device, '00A4040008A000000333010101');
+    console.log(res);
+    assert(res.error === 0);
+  });
   it('should cold reset cpu successfully', () => {
     const res = libdecard.IC_CpuColdReset(device);
     assert(res.error === 0);
