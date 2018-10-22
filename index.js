@@ -526,10 +526,10 @@ hardware.IC_CpuApduEXT_Hex = (handle, sbuff) => {
       const rlen = len.deref();
       const rbuff = ref.reinterpret(data, rlen * 2).toString();
       if (rbuff.indexOf('61') === 0) {
-        return hardware.IC_CpuApdu_Hex(handle, '00C00000' + rbuff.split('61')[1]);
+        return hardware.IC_CpuApduEXT_Hex(handle, '00C00000' + rbuff.split('61')[1]);
       }
       if (rbuff.indexOf('6C') === 0) {
-        return hardware.IC_CpuApdu_Hex(handle, sbuff.slice(0, -2) + rbuff.split('6C')[1]);
+        return hardware.IC_CpuApduEXT_Hex(handle, sbuff.slice(0, -2) + rbuff.split('6C')[1]);
       }
       return { error: 0, data: { rbuff } };
     }
