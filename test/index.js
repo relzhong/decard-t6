@@ -5,7 +5,7 @@ const libdecard = require('../index');
 describe('test com port connect', () => {
   let device;
   it('should open port successfully', () => {
-    const { error, data } = libdecard.IC_InitComm(100);
+    const { error, data } = libdecard.IC_InitCommAdvanced(100);
     assert(error === 0);
     device = data.handle;
   });
@@ -26,16 +26,7 @@ describe('test com port connect', () => {
     assert(res.error === 0);
   });
   it('should do apdu successfully', () => {
-    const res = libdecard.IC_CpuApdu_Hex(device, '00A404000E315041592E5359532E4444463031');
-    assert(res.error === 0);
-  });
-  it('should do apdu successfully', () => {
-    const res = libdecard.IC_CpuApdu_Hex(device, '00B2010C00');
-    assert(res.error === 0);
-  });
-  it('should do apdu successfully', () => {
-    const res = libdecard.IC_CpuApdu_Hex(device, '00A4040008A000000333010101');
-    console.log(res);
+    const res = libdecard.IC_CpuApduEXT_Hex(device, '00A404000E315041592E5359532E4444463031');
     assert(res.error === 0);
   });
   it('should cold reset cpu successfully', () => {
