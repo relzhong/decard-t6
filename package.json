@@ -1,6 +1,6 @@
 {
   "name": "decard-t6",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Driver for decard-t6",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "callsite": "^1.0.0",
-    "ffi": "^2.2.0",
+    "ffi": "^2.3.0",
     "iconv-lite": "^0.4.23",
     "ref-array": "^1.2.0"
   },
